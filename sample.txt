@@ -4,3 +4,4 @@ Change after commit 1
 change in new after commit 1
 change during merge
 change after merge
+change in forward
