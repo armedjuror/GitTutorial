@@ -1,0 +1,746 @@
+armedjuror@Ajwads-MacBook-Air git_tut % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/armedjuror/Dev/Learning/OpenSoft/git_tut/.git/
+armedjuror@Ajwads-MacBook-Air git_tut % ls -all
+total 8
+drwxr-xr-x  4 armedjuror  staff  128 Feb 17 22:25 .
+drwxr-xr-x  3 armedjuror  staff   96 Feb 17 22:02 ..
+drwxr-xr-x  9 armedjuror  staff  288 Feb 17 22:25 .git
+-rw-r--r--  1 armedjuror  staff   18 Feb 17 22:25 sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % ls
+sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % ls -a
+.		..		.git		sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % ls -l
+total 8
+-rw-r--r--  1 armedjuror  staff  18 Feb 17 22:25 sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % ls -al
+total 8
+drwxr-xr-x  4 armedjuror  staff  128 Feb 17 22:25 .
+drwxr-xr-x  3 armedjuror  staff   96 Feb 17 22:02 ..
+drwxr-xr-x  9 armedjuror  staff  288 Feb 17 22:25 .git
+-rw-r--r--  1 armedjuror  staff   18 Feb 17 22:25 sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % ls -all
+total 8
+drwxr-xr-x  4 armedjuror  staff  128 Feb 17 22:25 .
+drwxr-xr-x  3 armedjuror  staff   96 Feb 17 22:02 ..
+drwxr-xr-x  9 armedjuror  staff  288 Feb 17 22:25 .git
+-rw-r--r--  1 armedjuror  staff   18 Feb 17 22:25 sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % cd .git
+armedjuror@Ajwads-MacBook-Air .git % ls
+HEAD		config		description	hooks		info		objects		refs
+armedjuror@Ajwads-MacBook-Air .git % ls -a
+.		HEAD		description	info		refs
+..		config		hooks		objects
+armedjuror@Ajwads-MacBook-Air .git % file .
+.: directory
+armedjuror@Ajwads-MacBook-Air .git % file  
+Usage: file [-bcCdEhikLlNnprsSvzZ0] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-M magicfiles] [-P <parameter=value>] [--exclude-quiet]
+            <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+Try `file --help' for more information.
+armedjuror@Ajwads-MacBook-Air .git % file *
+HEAD:        ASCII text
+config:      ASCII text
+description: ASCII text
+hooks:       directory
+info:        directory
+objects:     directory
+refs:        directory
+armedjuror@Ajwads-MacBook-Air .git % cd ../
+armedjuror@Ajwads-MacBook-Air git_tut % ls
+sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % ls -a
+.		..		.git		sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	sample.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+armedjuror@Ajwads-MacBook-Air git_tut % git branch
+armedjuror@Ajwads-MacBook-Air git_tut % git branch
+armedjuror@Ajwads-MacBook-Air git_tut % git add -A        
+armedjuror@Ajwads-MacBook-Air git_tut % git branch
+armedjuror@Ajwads-MacBook-Air git_tut % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   sample.txt
+
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt 
+armedjuror@Ajwads-MacBook-Air git_tut % git status     
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   sample.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   sample.txt
+
+armedjuror@Ajwads-MacBook-Air git_tut % git add .  
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -m "First Commit"
+[master (root-commit) 34a4757] First Commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % git status                  
+On branch master
+nothing to commit, working tree clean
+armedjuror@Ajwads-MacBook-Air git_tut % git log
+commit 34a4757de25deed69ca6803e8938f4137df59c6a (HEAD -> master)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git branch new
+armedjuror@Ajwads-MacBook-Air git_tut % git branch
+* master
+  new
+armedjuror@Ajwads-MacBook-Air git_tut % git log       
+commit 34a4757de25deed69ca6803e8938f4137df59c6a (HEAD -> master, new)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt 
+armedjuror@Ajwads-MacBook-Air git_tut % git status                  
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -a  
+Aborting commit due to empty commit message.
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -a -m "Second Commit"
+[master 482b363] Second Commit
+ 1 file changed, 1 insertion(+)
+armedjuror@Ajwads-MacBook-Air git_tut % git log                         
+commit 482b363e281f2ec759a86b8939a1726ec5528483 (HEAD -> master)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:43:51 2022 +0530
+
+    Second Commit
+
+commit 34a4757de25deed69ca6803e8938f4137df59c6a (new)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout new
+Switched to branch 'new'
+armedjuror@Ajwads-MacBook-Air git_tut % git log                         
+commit 34a4757de25deed69ca6803e8938f4137df59c6a (HEAD -> new)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git log -A
+fatal: unrecognized argument: -A
+armedjuror@Ajwads-MacBook-Air git_tut % git log -a
+commit 34a4757de25deed69ca6803e8938f4137df59c6a (HEAD -> new)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all
+commit 482b363e281f2ec759a86b8939a1726ec5528483 (master)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:43:51 2022 +0530
+
+    Second Commit
+
+commit 34a4757de25deed69ca6803e8938f4137df59c6a (HEAD -> new)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % cat sample.txt 
+JCB OpenSoft 2022
+Meeting 4
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt 
+armedjuror@Ajwads-MacBook-Air git_tut % git branch                      
+  master
+* new
+armedjuror@Ajwads-MacBook-Air git_tut % git add -A
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -m "Commit in new branch"
+[new 8e67096] Commit in new branch
+ 1 file changed, 1 insertion(+)
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all                      
+commit 8e670960dbdb739715fedb235ddb895e474ad456 (HEAD -> new)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:48:45 2022 +0530
+
+    Commit in new branch
+
+commit 482b363e281f2ec759a86b8939a1726ec5528483 (master)
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:43:51 2022 +0530
+
+    Second Commit
+
+commit 34a4757de25deed69ca6803e8938f4137df59c6a
+Author: Armed Juror <armedjuror@gmail.com>
+Date:   Thu Feb 17 22:35:31 2022 +0530
+
+    First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all --graph               
+* commit 8e670960dbdb739715fedb235ddb895e474ad456 (HEAD -> new)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 22:48:45 2022 +0530
+| 
+|     Commit in new branch
+|   
+| * commit 482b363e281f2ec759a86b8939a1726ec5528483 (master)
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all --decorate --oneline --graph
+
+* 8e67096 (HEAD -> new) Commit in new branch
+| * 482b363 (master) Second Commit
+|/  
+* 34a4757 First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout master
+Switched to branch 'master'
+armedjuror@Ajwads-MacBook-Air git_tut % git merge new
+Auto-merging sample.txt
+CONFLICT (content): Merge conflict in sample.txt
+Automatic merge failed; fix conflicts and then commit the result.
+armedjuror@Ajwads-MacBook-Air git_tut % git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+armedjuror@Ajwads-MacBook-Air git_tut % cat sample.txt 
+JCB OpenSoft 2022
+Meeting 4
+<<<<<<< HEAD
+Change after commit 1
+=======
+change in new after commit 1
+>>>>>>> new
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt 
+armedjuror@Ajwads-MacBook-Air git_tut % git status     
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+armedjuror@Ajwads-MacBook-Air git_tut % git add .      
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -m "Merge"
+[master 4c1bc43] Merge
+armedjuror@Ajwads-MacBook-Air git_tut % git status           
+On branch master
+nothing to commit, working tree clean
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all --decorate --oneline --graph
+
+*   4c1bc43 (HEAD -> master) Merge
+|\  
+| * 8e67096 (new) Commit in new branch
+* | 482b363 Second Commit
+|/  
+* 34a4757 First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt                           
+armedjuror@Ajwads-MacBook-Air git_tut % git add .                                 
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -m "After Merge"               
+[master d1a21f7] After Merge
+ 1 file changed, 1 insertion(+)
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all --decorate --oneline --graph
+
+* d1a21f7 (HEAD -> master) After Merge
+*   4c1bc43 Merge
+|\  
+| * 8e67096 (new) Commit in new branch
+* | 482b363 Second Commit
+|/  
+* 34a4757 First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph                    
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (HEAD -> master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout 4c1bc432501c4fac0cbcd6785ad754369ed066a6
+Note: switching to '4c1bc432501c4fac0cbcd6785ad754369ed066a6'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 4c1bc43 Merge
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph                               
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (HEAD)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d
+Previous HEAD position was 4c1bc43 Merge
+HEAD is now at d1a21f7 After Merge
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph                               
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (HEAD, master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout 4c1bc432501c4fac0cbcd6785ad754369ed066a6
+Previous HEAD position was d1a21f7 After Merge
+HEAD is now at 4c1bc43 Merge
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph                               
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (HEAD)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git branch fast
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph                               
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (HEAD, fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout fast
+Switched to branch 'fast'
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (HEAD -> fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout master
+Switched to branch 'master'
+armedjuror@Ajwads-MacBook-Air git_tut % ls
+sample.txt
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (HEAD -> master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git branch forward
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (HEAD -> master, forward)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout forward
+Switched to branch 'forward'
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (HEAD -> forward, master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+      First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt 
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -a -m "Commit in forward"
+[forward 2c9cd34] Commit in forward
+ 1 file changed, 1 insertion(+)
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph              
+* commit 2c9cd3402ac34e15e1371b4e36a2ffc1557192cb (HEAD -> forward)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:06:04 2022 +0530
+| 
+|     Commit in forward
+| 
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d (master)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+armedjuror@Ajwads-MacBook-Air git_tut % git checkout master
+Switched to branch 'master'
+armedjuror@Ajwads-MacBook-Air git_tut % git merge forward
+Updating d1a21f7..2c9cd34
+Fast-forward
+ sample.txt | 1 +
+ 1 file changed, 1 insertion(+)
+armedjuror@Ajwads-MacBook-Air git_tut % nano sample.txt                     
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all  --graph
+* commit 2c9cd3402ac34e15e1371b4e36a2ffc1557192cb (HEAD -> master, forward)
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:06:04 2022 +0530
+| 
+|     Commit in forward
+| 
+* commit d1a21f7271f9f18d8a7b472a5ef67f7ff943c17d
+| Author: Armed Juror <armedjuror@gmail.com>
+| Date:   Thu Feb 17 23:00:08 2022 +0530
+| 
+|     After Merge
+|   
+*   commit 4c1bc432501c4fac0cbcd6785ad754369ed066a6 (fast)
+|\  Merge: 482b363 8e67096
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:58:09 2022 +0530
+| | 
+| |     Merge
+| | 
+| * commit 8e670960dbdb739715fedb235ddb895e474ad456 (new)
+| | Author: Armed Juror <armedjuror@gmail.com>
+| | Date:   Thu Feb 17 22:48:45 2022 +0530
+| | 
+| |     Commit in new branch
+| | 
+* | commit 482b363e281f2ec759a86b8939a1726ec5528483
+|/  Author: Armed Juror <armedjuror@gmail.com>
+|   Date:   Thu Feb 17 22:43:51 2022 +0530
+|   
+|       Second Commit
+| 
+* commit 34a4757de25deed69ca6803e8938f4137df59c6a
+  Author: Armed Juror <armedjuror@gmail.com>
+  Date:   Thu Feb 17 22:35:31 2022 +0530
+  
+armedjuror@Ajwads-MacBook-Air git_tut % git log --all --decorate --oneline --graph
+
+* 2c9cd34 (HEAD -> master, forward) Commit in forward
+* d1a21f7 After Merge
+*   4c1bc43 (fast) Merge
+|\  
+| * 8e67096 (new) Commit in new branch
+* | 482b363 Second Commit
+|/  
+* 34a4757 First Commit
+armedjuror@Ajwads-MacBook-Air git_tut % git commit -m "Fast Forward Merge"
+armedjuror@Ajwads-MacBook-Air git_tut % history                                   
+ 1105  ls
+ 1106  git log --all  --graph
+ 1107  git branch forward
+ 1108  git log --all  --graph
+ 1109  git checkout forward
+ 1110  git log --all  --graph
+ 1111  nano sample.txt
+ 1112  git commit -a -m "Commit in forward"
+ 1113  git log --all  --graph
+ 1114  git checkout master
+ 1115  git merge forward
+ 1116  nano sample.txt
+ 1117  git log --all  --graph
+ 1118  git log --all --decorate --oneline --graph\n
+ 1119  git commit -m "Fast Forward Merge"
+ 1120  git commit -m "Fast Forward Merge" -a
+armedjuror@Ajwads-MacBook-Air git_tut % git remote add origin https://github.com/armedjuror/GitTutorial.git
+armedjuror@Ajwads-MacBook-Air git_tut % git remote
+origin
+armedjuror@Ajwads-MacBook-Air git_tut % git push <remote_name> <branch_name>
+zsh: parse error near `<'
+armedjuror@Ajwads-MacBook-Air git_tut % git push origin master
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/armedjuror/GitTutorial.git/'
+armedjuror@Ajwads-MacBook-Air git_tut % git push origin master
+Username for 'https://github.com': armedjuror
+Password for 'https://armedjuror@github.com': 
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (18/18), 1.42 KiB | 1.42 MiB/s, done.
+Total 18 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/armedjuror/GitTutorial.git
+ * [new branch]      master -> master
